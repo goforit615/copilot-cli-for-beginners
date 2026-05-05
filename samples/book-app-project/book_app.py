@@ -1,5 +1,5 @@
 import sys
-from books import BookCollection
+from books import BookCollection, get_book_stats
 
 
 # Global collection instance
@@ -59,6 +59,29 @@ def handle_find():
     show_books(books)
 
 
+def handle_stats():
+    stats = get_book_stats(collection.list_books())
+
+    print("\nBook Statistics\n")
+    print(f"Total books: {stats['total_count']}")
+    print(f"Read books: {stats['number_read']}")
+    print(f"Unread books: {stats['number_unread']}")
+
+    if stats["oldest_book"] is not None:
+        oldest = stats["oldest_book"]
+        print(f"Oldest book: {oldest.title} ({oldest.year})")
+    else:
+        print("Oldest book: None")
+
+    if stats["newest_book"] is not None:
+        newest = stats["newest_book"]
+        print(f"Newest book: {newest.title} ({newest.year})")
+    else:
+        print("Newest book: None")
+
+    print()
+
+
 def show_help():
     print("""
 Book Collection Helper
@@ -68,6 +91,7 @@ Commands:
   add      - Add a new book
   remove   - Remove a book by title
   find     - Find books by author
+    stats    - Show collection statistics
   help     - Show this help message
 """)
 
@@ -87,6 +111,8 @@ def main():
         handle_remove()
     elif command == "find":
         handle_find()
+    elif command == "stats":
+        handle_stats()
     elif command == "help":
         show_help()
     else:

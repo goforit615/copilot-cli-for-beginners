@@ -1,6 +1,6 @@
 import json
 from dataclasses import dataclass, asdict
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 DATA_FILE = "data.json"
 
@@ -11,6 +11,28 @@ class Book:
     author: str
     year: int
     read: bool = False
+
+
+def get_book_stats(books: List[Book]) -> Dict[str, Any]:
+    """Return basic statistics for a list of books."""
+    if not books:
+        return {
+            "total_count": 0,
+            "number_read": 0,
+            "number_unread": 0,
+            "oldest_book": None,
+            "newest_book": None,
+        }
+
+    number_read = sum(1 for book in books if book.read)
+
+    return {
+        "total_count": len(books),
+        "number_read": number_read,
+        "number_unread": len(books) - number_read,
+        "oldest_book": min(books, key=lambda book: book.year),
+        "newest_book": max(books, key=lambda book: book.year),
+    }
 
 
 class BookCollection:
