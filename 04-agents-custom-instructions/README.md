@@ -127,6 +127,16 @@ copilot
 
 > 💡 **Why set a plan-mode model?** A high-quality plan created by a frontier model upfront can actually save tokens and time overall. A precise, well-scoped plan means fewer back-and-forth corrections during implementation.
 
+### Plan + Autopilot in One Step
+
+You can combine `--plan` with `--mode autopilot` to have Copilot create a plan and then execute it automatically, without stopping to ask for your approval at each step:
+
+```bash
+copilot --plan --mode autopilot
+```
+
+This is handy when you trust the plan Copilot will produce and want to hand off the entire task. Think of it as telling a contractor: "Come up with a plan and just do it." Use this on smaller, well-scoped tasks where you're comfortable letting Copilot run freely. For larger or unfamiliar tasks, stick with the interactive plan → review → implement workflow so you stay in control.
+
 > 📚 **Official Documentation**: [GitHub Copilot CLI Agents](https://docs.github.com/copilot/how-tos/copilot-cli/use-copilot-cli/invoke-custom-agents)
 
 ---
