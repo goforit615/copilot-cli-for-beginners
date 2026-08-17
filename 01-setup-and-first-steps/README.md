@@ -299,6 +299,11 @@ You can also launch Copilot CLI directly in plan mode using the `--plan` flag:
 copilot --plan
 ```
 
+> 💡 **Plan + auto-implement**: Combine `--plan` with `--mode=autopilot` to have Copilot plan first and then implement automatically — no step-by-step approval needed. Great when you trust the plan and want it executed in one go:
+> ```bash
+> copilot --plan --mode=autopilot
+> ```
+
 **Plan mode output:** (your output may differ)
 
 ```
@@ -329,7 +334,7 @@ Proceed with implementation? [Y/n]
 
 > 💡 **Want something more complex?** Try: `/plan Add search and filter capabilities to the book app`. Plan mode scales from simple features to full applications.
 
-> 📚 **Autopilot mode**: You may have noticed Shift+Tab cycles through a third mode called **Autopilot**. In autopilot mode, Copilot works through an entire plan without waiting for your input after each step — like handing a task to a colleague and saying "let me know when you're finished." The typical workflow is plan → accept → autopilot, which means you need to be good at writing plans first. You can also launch directly into autopilot with `copilot --autopilot`. Get comfortable with Interactive and Plan modes first, then see the [official docs](https://docs.github.com/copilot/concepts/agents/copilot-cli/autopilot) when you're ready.
+> 📚 **Autopilot mode**: You may have noticed Shift+Tab cycles through a third mode called **Autopilot**. In autopilot mode, Copilot works through an entire plan without waiting for your input after each step — like handing a task to a colleague and saying "let me know when you're finished." The typical workflow is plan → accept → autopilot, which means you need to be good at writing plans first. You can also launch directly into autopilot with `copilot --autopilot`, or use the `/autopilot <objective>` slash command inside a session to start an autopilot run with a specific goal (e.g., `/autopilot Add input validation to the book app`). Get comfortable with Interactive and Plan modes first, then see the [official docs](https://docs.github.com/copilot/concepts/agents/copilot-cli/autopilot) when you're ready.
 
 ---
 
@@ -514,6 +519,11 @@ copilot
 > 💡 **Not sure which model to pick?** Select **`Auto`** from the model picker to let Copilot automatically choose the best available model for each session. This is a great default if you're just getting started and don't want to think about model selection.
 
 > 💡 **Model family shortcuts**: You can also type a short family alias — like `opus`, `sonnet`, `haiku`, `gpt`, or `gemini` — directly in the `/model` picker instead of scrolling through the full list. Copilot will pick the best available model in that family for you.
+
+> 💡 **Model choice is session-scoped**: The model you pick with `/model` applies only to your current session. When you start a new session, Copilot reverts to its default. To set a persistent model for all future sessions, use `/config model` instead:
+> ```
+> > /config model
+> ```
 
 </details>
 
