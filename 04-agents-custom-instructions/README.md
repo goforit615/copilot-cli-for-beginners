@@ -170,6 +170,8 @@ When reviewing code, always check for:
 | `.github/agents/` | Project-specific | Team-shared agents with project conventions |
 | `~/.copilot/agents/` | Global (all projects) | Personal agents you use everywhere |
 
+> 💡 **Tip**: If you start Copilot CLI with `copilot --add-dir /path/to/directory`, any agent files found in that directory are automatically discovered and available — no need to copy them to `.github/agents/` or `~/.copilot/agents/`. This is handy for sharing agents from a shared team folder outside the current project.
+
 **This project includes sample agent files in the [.github/agents/](../.github/agents/) folder**. You can write your own, or customize the ones already provided.
 
 <details>

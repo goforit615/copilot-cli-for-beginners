@@ -331,6 +331,8 @@ Proceed with implementation? [Y/n]
 
 > 📚 **Autopilot mode**: You may have noticed Shift+Tab cycles through a third mode called **Autopilot**. In autopilot mode, Copilot works through an entire plan without waiting for your input after each step — like handing a task to a colleague and saying "let me know when you're finished." The typical workflow is plan → accept → autopilot, which means you need to be good at writing plans first. You can also launch directly into autopilot with `copilot --autopilot`, or set a goal inline with `/autopilot <objective>` (for example, `/autopilot Add a search command to the book app`). You can also combine planning and autopilot by running `copilot --plan --mode autopilot`. Copilot will create a plan first and then implement it automatically without pausing for approval. Get comfortable with Interactive and Plan modes first, then see the [official docs](https://docs.github.com/copilot/concepts/agents/copilot-cli/autopilot) when you're ready.
 
+> 💡 **Set your default startup mode**: If you always prefer starting in a particular mode, you can make that permanent. Open `/settings` and search for `defaultMode` to set your preferred startup mode (e.g., `interactive`, `plan`, or `autopilot`). You can also set `defaultPermissionMode` to control how Copilot handles permission prompts by default — useful if you want to auto-approve or require confirmation on every action.
+
 ---
 
 ### Mode 3: Programmatic Mode
@@ -473,19 +475,21 @@ That's it for getting started! As you become comfortable, you can explore additi
 
 > 💡 **Sessions tab**: The interactive Copilot CLI UI includes a **Sessions tab** at the top of the window. You can use it to view and switch between multiple sessions running at the same time. Press `n` in the Sessions tab to start a new session without closing the one you're in.
 
+> 💡 **Session restore**: If Copilot CLI closes unexpectedly — due to a crash or a machine restart — it will automatically offer to restore any sessions that were still open when it went away. You won't lose your work-in-progress conversations.
+
 ### Display
 
 | Command | What It Does |
 |---------|--------------|
 | `/statusline` (or `/footer`) | Customize which items appear in the status bar at the bottom of the session (directory, branch, effort, context window, quota) |
 | `/theme` | View or set terminal theme |
-| `/voice` | Dictate your prompt using local speech-to-text — speak naturally instead of typing |
+| `/voice` | Dictate your prompt using local speech-to-text — speak naturally instead of typing. Press **Ctrl+Space** at any time to toggle voice dictation on or off without typing a command. |
 
 ### Help and Feedback
 
 | Command | What It Does |
 |---------|--------------|
-| `/app` | Open the GitHub app (or browser fallback) directly from the CLI |
+| `/app` | Open the GitHub Copilot app (or browser fallback) directly from the CLI — you can also run `copilot app` from your terminal before starting a session to open it in the current directory |
 | `/changelog` | Display changelog for CLI versions |
 | `/feedback` | Submit feedback to GitHub |
 | `/help` | Show all available commands |

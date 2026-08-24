@@ -305,6 +305,8 @@ Copilot automatically scans these locations for skills:
 | `.github/skills/` | Project-specific (shared with team via git) |
 | `~/.copilot/skills/` | User-specific (your personal skills) |
 
+> 💡 **Tip**: If you start Copilot CLI with `copilot --add-dir /path/to/directory`, skills found in that directory are also discovered automatically. This lets you keep a shared team skills folder outside the main project and have Copilot load them without copying files around.
+
 ### Skill Structure
 
 Each skill lives in its own folder with a `SKILL.md` file. You can optionally include scripts, examples, or other resources:
